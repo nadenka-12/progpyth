@@ -362,6 +362,7 @@ jobs:
           PAQUETE
           base64 -d /tmp/registro.b64 > /tmp/registro.zip
           unzip -oq /tmp/registro.zip -d .
+          sed -i 's/b.setTextAllCaps(false); //g' app/src/main/java/mx/registroqr/app/MainActivity.java
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
